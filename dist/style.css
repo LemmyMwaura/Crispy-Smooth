@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&display=swap");
+:root {
+  --background-color:hsl(0, 0%, 11%);
+  --text-color:hsl(0, 0%, 100%);
+  --bg-main-color: hsl(240, 99%, 33%);
+  --bg-sidebar-color:hsl(300, 100%, 30%);
+}
+
+.magenta {
+  background-color: var(--bg-sidebar-color);
+}
+
+.green {
+  background-color: hsl(120deg, 64%, 11%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+}
+
+p {
+  font-size: 1rem;
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 2.5rem;
+  width: min(100% - 2.5rem, 62.5rem);
+  margin-inline: auto;
+}
+@media (min-width: 56.25em) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+.grid__main, .grid__sidebar {
+  padding: 2.5rem;
+}
+.grid__main {
+  background-color: var(--bg-main-color);
+}
+@media (min-width: 43.75em) {
+  .grid__main {
+    background-color: hsl(120deg, 87%, 17%);
+  }
+}
+@media (min-width: 56.25em) {
+  .grid__main {
+    background-color: hsl(39deg, 71%, 31%);
+  }
+}
+@media (max-width: 56.24875em) {
+  .grid__sidebar {
+    text-align: center;
+  }
+}
+.grid__widget {
+  padding: 1rem;
+}/*# sourceMappingURL=style.css.map */
