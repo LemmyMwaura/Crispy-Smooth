@@ -1,0 +1,29 @@
+@use 'functions' as fs;
+
+// 700px, 900px, 1440px,
+$breakpoints-up: (
+  "medium": fs.emConverter(700),
+  "large": fs.emConverter(900),
+  "xlarge": fs.emConverter(1440),
+);
+
+//699.98px, 899.98px, 1439.98px
+$breakpoints-down:(
+  "small": fs.emConverter(699.98),
+  "medium": fs.emConverter(899.98),
+  "large": fs.emConverter(1439.98),
+);
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)){
+    @content;
+  }
+};
+
+@mixin breakpoint-down($size){
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+};
+
+//iem = relative to the parent element. = default font size = 16px
