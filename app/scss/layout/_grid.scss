@@ -1,0 +1,39 @@
+@use '../util';
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: util.remConverter(40);
+  width: min(100% - util.remConverter(40), util.remConverter(1000));
+  margin-inline:auto;
+
+  // From x going up
+  @include util.breakpoint-up(large) {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows:auto;
+  }
+
+  &__main,
+  &__sidebar {
+    padding: util.remConverter(40);
+  }
+  &__main {
+    background-color: var(--bg-main-color);
+    @include util.breakpoint-up(medium){
+      background-color: hsl(120, 87%, 17%);
+    }
+    @include util.breakpoint-up(large){
+      background-color: hsl(39, 71%, 31%);
+    }
+  }
+  &__sidebar {
+    //Upto x (going-down)
+    @include util.breakpoint-down(medium){
+      text-align: center;
+    }
+  }
+  &__widget { 
+    padding: util.remConverter(16);
+  }
+}
