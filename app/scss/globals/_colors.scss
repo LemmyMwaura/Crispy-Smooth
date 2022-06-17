@@ -1,0 +1,13 @@
+:root{
+  --background-color:hsl(0, 0%, 11%);
+  --text-color:hsl(0, 0%, 100%);
+  --bg-main-color: hsl(240, 99%, 33%);
+  --bg-sidebar-color:hsl(300, 100%, 30%);
+}
+
+.magenta{
+  background-color: var(--bg-sidebar-color);
+}
+.green{
+  background-color: hsl(120, 64%, 11%);
+}

@@ -1,0 +1,26 @@
+@use '../util';
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.1;
+  // margin-top: 0;
+}
+
+h1 {
+  //clamp takes the (minimum number, preffered value, max value)
+  // font-size: clamp(1.75rem, 1rem + 2vw, 2.5rem);
+  font-size: clamp(util.remConverter(28), util.remConverter(16) + 2vw, util.remConverter(40));
+}
+
+p {
+  // margin-top: 0;
+  font-size: util.remConverter(16);
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
